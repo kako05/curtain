@@ -2,7 +2,7 @@
 <div class="index-main">
   <div class="curtain">
     <%= image_tag "curtain2.png", class: "curtain-image" %>
-    <video id="opening-video" data-turbo="false">
+    <video id="opening-video" data: {turbo: false}>
       <source src="<%= asset_path('opening2.mp4') %>" type="video/mp4">
       Your browser does not support the video tag.
     </video>
