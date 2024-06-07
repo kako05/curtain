@@ -1,0 +1,35 @@
+<%= render "shared/navbar" %>
+<div class="index-main">
+  <div class="curtain">
+    <%= image_tag "curtain2.png", class: "curtain-image" %>
+    <video id="opening-video" data-turbo="false">
+      <source src="<%= asset_path('opening.mp4') %>" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="contents">
+      <%= form_with(url: "#", method: "get", local: true, class: "main-search-form") do |form| %>
+        <div class="top-content">
+          <label>
+            <%= form.check_box :search_title, {}, "1", "0" %>
+            <span class="checkbox-label">タイトル</span>
+          </label>
+          <label>
+            <%= form.check_box :search_cast, {}, "1", "0" %>
+            <span class="checkbox-label">俳優名</span>
+          </label>
+          <label>
+            <%= form.check_box :search_staff, {}, "1", "0" %>
+            <span class="checkbox-label">スタッフ名</span>
+          </label>
+        </div>
+        <div class="search-container">
+        <%= form.text_field :q_cont, placeholder: "Search", class: "search-input" %>
+        <%= form.submit "ホリック", class: "search-btn" %>
+        </div>
+      <% end %>
+      <div class="bottom-content">
+        <%= link_to "上映中", "#", class: "enter-buttin" %>
+      </div>
+    </div>
+  </div>
+</div>
